@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bené.estudios - Tudo sobre Futebol</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #161c2a;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --accent-green: #00ff87; 
+            --spfc-red: #ff3344;
+            --cbf-gold: #ffd700;
+            --border-radius: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .intro {
+            font-size: 1.2rem;
+            color: var(--accent-green);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 255, 135, 0.1);
+        }
+
+        @media (min-width: 768px) {
+            .card-split {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+            .card-split.reverse {
+                direction: rtl;
+            }
+            .card-split.reverse .card-body {
+                direction: ltr;
+            }
+        }
+
+        .card-image {
+            position: relative;
+            min-height: 250px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .img-tactics { background-image: url('https://unsplash.com'); }
+        .img-spfc { background-image: url('https://unsplash.com'); }
+        .img-selecao { background-image: url('https://unsplash.com'); }
+
+        .card-image::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0) 40%, rgba(22,28,42,0.9) 100%);
+        }
+
+        .card-body {
+            padding: 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .card p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            text-align: justify;
+        }
+
+        .spfc { color: var(--spfc-red); font-weight: 700; border-bottom: 2px solid var(--spfc-red); }
+        .selecao { color: var(--cbf-gold); font-weight: 700; border-bottom: 2px solid var(--cbf-gold); }
+        .premium-tag { color: var(--accent-green); font-weight: 700; }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Página do Brunão</h1>
+            <p class="intro">Tudo sobre futebol. A página para fãs e obcecados!</p>
+        </header>
+
+        <main class="grid">
+            <section class="card card-split">
+                <div class="card-image img-tactics"></div>
+                <div class="card-body">
+                    <p>Se você procura análises táticas profundas e debates de alto nível, está no lugar certo. Meu conhecimento sobre o esporte bretão é elevado a um <span class="premium-tag">patamar diferenciado</span>. Não sou apenas mais um torcedor assistindo ao jogo; eu estudo a história, entendo as pranchetas e vivo o futebol 24 horas por dia.</p>
+                </div>
+            </section>
+
+            <section class="card card-split reverse">
+                <div class="card-image img-spfc"></div>
+                <div class="card-body">
+                    <p>A minha grande especialidade é o <span class="spfc">São Paulo Futebol Clube</span>. Conheço cada detalhe da trajetória do Tricolor Mais Querido, desde as glórias do MorumBIS até as mentes brilhantes que construíram nossa história de soberania mundial. Se o assunto for a história tricolor, escalações históricas ou táticas do clube, você está falando com um especialista.</p>
+                </div>
+            </section>
+
+            <section class="card card-split">
+                <div class="card-image img-selecao"></div>
+                <div class="card-body">
+                    <p>Além disso, a minha grande paixão e foco de estudo é a <span class="selecao">Seleção Brasileira</span>. Acompanho de perto os ciclos de Copa do Mundo, a evolução dos nossos craques no exterior e o peso da nossa camisa pentacampeã. Aqui você vai encontrar a verdadeira essência do futebol brasileiro analisada por quem realmente entende do riscado.</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 bené.estudios. Todos os direitos reservados do Brunão.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
